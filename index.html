@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Layout</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+20&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Discovery Unit</h1>
+    <div class="navigation">
+        <h2>NAVIGATION</h2>
+        <ul>
+            <li><a href="learn.html">Learn</a></li>
+            <p></p>
+            <li><a href="practice.html">Practice</a></li>
+            <p></p>
+            <li><a href="al.html">Affected Land</a></li>
+        </ul>
+    </div>
+
+    <img src="img/nationalguard.png" alt="National Guard Logo" class="logo top-left">
+    <img src="img/Mesa.png" alt="Mesa Logo" class="logo center">
+    
+
+    <!--I used chat gpt to help me understand java script since I only have surface level knowledge. Using the script function I was able to make toggles using if statements which were much more fluid than hard coding in html/css-->
+    <script>
+        function toggleArrow() {
+            var arrowImage = document.getElementById("arrowImage");
+            var infoText = document.getElementById("infoText");
+
+            if (arrowImage.src.includes("arrow.png")) {
+                arrowImage.src = "img/arrow2.png"; //change to arrow2.png
+                infoText.style.display = "block"; //show text
+            } else {
+                arrowImage.src = "img/arrow.png"; //change back to arrow.png
+                infoText.style.display = "none"; //hide text
+            }
+        }
+    </script>
+
+
+<audio id="bgMusic" loop>
+    <source src="sound/uncanny music.mp3" type="audio/mpeg">
+</audio>
+
+<!--this allows the soundoff to toggle to soundon-->
+<img src="img/soundoff.png" alt="Sound Off" class="logo top-right" id="soundImage" onclick="toggleSound()">
+
+    <!--using the help chatgpt gave me with the toggle arrow function i did something very similar with the music, having it toggle on and off with the soundoff/on png-->
+    <script>
+        function toggleSound() {
+            var audio = document.getElementById("bgMusic");
+            var soundImage = document.getElementById("soundImage");
+
+            if (audio.paused) {
+                audio.play();
+                soundImage.src = "img/sound.png"; // Show "Sound On" image
+            } else {
+                audio.pause();
+                soundImage.src = "img/soundoff.png"; // Show "Sound Off" image
+            }
+        }
+    </script>
+
+<div class="arrow-container">
+    <img src="img/arrow.png" alt="Arrow" class="arrow" id="arrowImage" onclick="toggleArrow()">
+    <p id="infoText">
+        Please read and learn. Your safety and comfort could depend on it. If your area is affected by the briefed anomalies read our next steps. This information is all previously classified and is now open due to public safety concerns.
+    </p>
+</div>
+</body>
+</html>

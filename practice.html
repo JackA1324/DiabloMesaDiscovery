@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+20&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="header">
+        <p></p>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="learn.html">Learn</a>
+            <a href="practice.html">Practice</a>
+            <a href="al.html">AL</a>
+        </div>
+    </div>
+    
+
+    <div class="Practice-content">
+        <h2>Practice</h2>
+    </div>
+
+
+    <div>
+    <h3>LETS PRACTICE!</h3>
+    <p>Click on the suspected Amomolies to test what you've learned.</p>
+    </div>
+
+
+    <div class="game-container">
+        <!--as stated in my css under (clickgame) I used chatgpt to help be create a ratio that would give me three different steps so that once a box is clicked it will transition to the next image-->
+        <!--you can see in my input i have the ratio type as well as each step id-->
+        <input type="radio" id="step1" name="game-steps" checked>
+        <div class="game-image img1">
+          <img src="img/skinwalker1.png" alt="Game Image 1">
+          <!--clicking this label selects step2-->
+          <label for="step2" class="click-box box1"></label>
+        </div>
+        
+        <input type="radio" id="step2" name="game-steps">
+        <div class="game-image img2">
+          <img src="img/skinwalker2.png" alt="Game Image 2">
+          <!--clicking this label selects step3-->
+          <label for="step3" class="click-box box2"></label>
+        </div>
+      
+        <input type="radio" id="step3" name="game-steps">
+        <div class="game-image img3">
+          <img src="img/skinwalker3.png" alt="Game Image 3">
+          <label for="step1" class="click-box box3"></label>
+        </div>
+      </div>
+      
+    
+
+
+   
+    <div class="content-container">
+        <img src="img/skin 8.png" alt="Image">
+        <p>
+            Remember Walkers look very human at times. But a trained eye can tell the difference! If it looks and sounds like someone you know that doesnt mean you should let your guard down. Always listen to your gut. Always.        </p>
+    </div>
+
+    <div class="anomaly-container">
+        <div class="anomaly">
+            <img src="img/the house 1.png" alt="The House">
+            <h3>House</h3>
+            <p> avoid at all costs. entities thrive here. reports of entity sightings in windows.</p>
+        </div>
+    
+        <div class="anomaly">
+            <img src="img/Church 1.png" alt="The Curch">
+            <h3>Church</h3>
+            <p>multiple missing persons cases involved. reports of ringing phone near.</p>
+        </div>
+    
+    </div>
+    <div>
+        <p>Different buildings and structures can also indicate leaks.</p>
+    </div>
+
+    <!--text box for password code-->
+    <div class="code-entry">
+        <p>Enter the access code:</p>
+        <input type="text" id="access-code" placeholder="">
+        <!--I used Chat GPT to help me understand "onclick" commands. Using the checkCode() and correct code sections allowed me to create this box-->
+        <button onclick="checkCode()">Submit</button>
+        <p id="error-message"></p>
+    </div>
+    
+    <script>
+        function checkCode() {
+            const input = document.getElementById("access-code").value;
+            const errorMessage = document.getElementById("error-message");
+            const correctCode = "code"; //Set the required code here
+            //I used chat gpt to help develope this if else statement in this script. This was a bit too confusing and hard to find on the internet which is why i used it here. It did strengthen my understanding of script and how it can be used in html
+            if (input.trim() === correctCode) {
+                window.location.href = "redacted.html";
+            } else {
+                errorMessage.textContent = "Access Denied. Incorrect Code.";
+                errorMessage.style.color = "red";
+            }
+        }
+    </script>
+    
+
+</body>
+</html>
